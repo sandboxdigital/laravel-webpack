@@ -19,6 +19,10 @@ class WebpackServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+        $this->publishes([
+            __DIR__.'/config/config.php' => config_path('webpack.php'),
+        ]);
+
         $this->mergeConfigFrom(__DIR__.'/config/defaults.php', 'webpack');
     }
 
