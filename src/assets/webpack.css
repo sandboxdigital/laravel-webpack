@@ -1,0 +1,25 @@
+#webpack-switcher {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  padding: 4px;
+  vertical-align: top;
+  z-index: 100;
+  }
+  #webpack-switcher span {
+    display: inline-block;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 8px;
+    vertical-align: top; }
+    #webpack-switcher span.hot-enabled {
+      color: #1db954; }
+    #webpack-switcher span.hot-disabled {
+      color: #CC181E; }
+  #webpack-switcher button {
+    display: inline-block;
+    vertical-align: top; }
+
+/*# sourceMappingURL=webpack.css.map*/

@@ -1,0 +1,21 @@
+{
+    "name": "sandboxdigital/laravel-webpack",
+    "description": "Laravel Webpack Hot Module switching",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Garrood",
+            "email": "thomas@sandbox.digital"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Sandbox\\Webpack": "src/"
+        }
+    }
+}
