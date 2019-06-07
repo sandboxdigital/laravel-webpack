@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sandbox\\Webpack": "src/"
+            "Sandbox\\Webpack\\": "src/"
         }
     }
 }
