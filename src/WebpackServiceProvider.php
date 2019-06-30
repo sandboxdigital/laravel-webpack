@@ -15,15 +15,19 @@ class WebpackServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        app('Illuminate\Contracts\Http\Kernel')->pushMiddleware(WebpackMiddleware::class);
+        // Doesn't work - add's to high in the Middleware chain
+        //app('Illuminate\Contracts\Http\Kernel')->pushMiddleware(WebpackMiddleware::class);
+
+        $router = $this->app['router'];
+        $router->pushMiddlewareToGroup('web', WebpackMiddleware::class);
 
         $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        $this->mergeConfigFrom(__DIR__.'/config/defaults.php', 'webpack');
 
         $this->publishes([
             __DIR__.'/config/config.php' => config_path('webpack.php'),
         ]);
-
-        $this->mergeConfigFrom(__DIR__.'/config/defaults.php', 'webpack');
     }
 
     /**
