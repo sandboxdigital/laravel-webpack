@@ -19,7 +19,11 @@ class WebpackServiceProvider extends ServiceProvider
         //app('Illuminate\Contracts\Http\Kernel')->pushMiddleware(WebpackMiddleware::class);
 
         $router = $this->app['router'];
-        $router->pushMiddlewareToGroup('web', WebpackMiddleware::class);
+
+        $groups = config('webpack.middlewareGroups');
+        foreach ($groups as $group) {
+            $router->pushMiddlewareToGroup($group, WebpackMiddleware::class);
+        }
 
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 

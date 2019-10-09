@@ -20,7 +20,7 @@ class Webpack
     {
         $host = config('webpack.host');
         $port = config('webpack.port');
-        return 'http://'.$host.':'.$port.''.$path;
+        return $host.':'.$port.''.$path;
     }
 
 }
