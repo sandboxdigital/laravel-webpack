@@ -28,8 +28,9 @@ class WebpackMiddleware
 
         $response = $next($request);
 
+        $type = $response->headers->get('Content-Type','');
         if ($response instanceof Response
-            && str_contains($response->headers->get('Content-Type'), 'text/html')) {
+            && str_contains($type, 'text/html')) {
 
             $hot = Webpack::isHot() ? 'true' : 'false';
 
